@@ -1,9 +1,15 @@
-﻿@model dynamic
+﻿@model List<EmailDemo.Models.UserInfo>
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "发布Email";
 }
 
 <h2>title</h2>
 
+@foreach (var user in Model)
+{
+    <p>姓名： @user.UserName</p>
+    <p>邮件： @user.Email</p>
+}
+    
 <p> Hello wrold ! </p>

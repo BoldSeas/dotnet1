@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using EmailDemo.Models;
 
@@ -14,19 +12,19 @@ namespace EmailDemo.Controllers
 
         public ActionResult Index()
         {
-            using (var emailDb = new EmailContext())
+            List<UserInfo> userList = new List<UserInfo>();
+            using (EmailContext context = new EmailContext())
             {
-               
-
-                emailDb.Emails.Add(new Email()
-                {
-                    ID = 1,
-                    Title = "第一封邮件",
-                    Content = "邮件内容",
-                });
+                userList = context.UserInfos.ToList();
+                //context.UserInfos.Add(new UserInfo()
+                //{
+                //    Email = "bjlianyu@hotmail.com",
+                //    UserName = "lianyu"
+                //});
+                //context.SaveChanges();
             }
 
-            return View();
+            return View(userList);
         }
 
     }

@@ -116,6 +116,7 @@
     </Compile>
     <Compile Include="Models\EmailContext.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\EmailInitializer.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
